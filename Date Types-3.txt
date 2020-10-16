@@ -1,0 +1,184 @@
+Tomorrows class
+Dictronary - with this all data types in python 
+
+Control statements -
+  if 
+  else 
+  Indentation - which is very important and also a simple one 
+  loops - for , while , do while 
+  
+  
+  
+ Dictionary - Unordered collection 
+              Mutable (it can be modified )
+			  
+			  {key:pair}
+			   studen1:rollno
+			   
+ How to initialise a dictionary 
+ dict()
+ {}
+ 
+ Set is not allowed to be used as key in dictionary 
+ 
+C:\Users\navee>py
+Python 3.8.5 (tags/v3.8.5:580fbb0, Jul 20 2020, 15:43:08) [MSC v.1926 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> sampledict=dict()
+>>> type(sampledict)
+<class 'dict'>
+>>> emptydict={}
+>>> type(emptydict)
+<class 'dict'>
+>>> sampledict=dict({0:"python",1:"scala",2:"spark"})
+>>> print(sampledict)
+{0: 'python', 1: 'scala', 2: 'spark'}
+>>> sampledict=dict({"python",1:"scala",2:"spark"})
+  File "<stdin>", line 1
+    sampledict=dict({"python",1:"scala",2:"spark"})
+                               ^
+SyntaxError: invalid syntax
+>>> emptydict={"dinesh":"A","naveen":"C"}
+>>> print(emptydict)
+{'dinesh': 'A', 'naveen': 'C'}
+>>> complexdict={(1,2):[1,2,3,4]}
+>>> print(complexdict)
+{(1, 2): [1, 2, 3, 4]}
+>>> complexdict={(1,2):[1,2,3,4],set([1,2,3,4]):dict({"complex":"dictionary"})}
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unhashable type: 'set'
+>>> complexdict={(1,2):[1,2,3,4]}
+>>>
+
+Operations on dictionary :
+insertion
+deletion 
+updating 
+Reading 
+
+>>> simpledict={"student1":[35,45,55,65],"student2":[46,75,64,90]}
+>>> simpledict[0]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 0
+>>> simpledict[student1]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'student1' is not defined
+>>> simpledict["student1"]
+[35, 45, 55, 65]
+>>> simpledict["student2"]
+[46, 75, 64, 90]
+>>> simpledict["student2"]=set([1,2,3,4])
+>>> simpledict["student2"]
+{1, 2, 3, 4}
+>>> print(simpledict)
+{'student1': [35, 45, 55, 65], 'student2': {1, 2, 3, 4}}
+>>> simpledict["student3"]=[23,24,25,26]
+>>> print(simpledict)
+{'student1': [35, 45, 55, 65], 'student2': {1, 2, 3, 4}, 'student3': [23, 24, 25, 26]}
+>>> simpledict["student3"]=[23]
+>>> print(simpledict)
+{'student1': [35, 45, 55, 65], 'student2': {1, 2, 3, 4}, 'student3': [23]}
+>>> simpledict.get("student3")
+[23]
+>>> example={set([1,2,3,4]):"value"}
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unhashable type: 'set'
+>>> example={"query":set([1,2,3,4])}
+>>> print(example)
+{'query': {1, 2, 3, 4}}
+>>> del example.get["query"]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'builtin_function_or_method' object does not support item deletion
+>>> del example["query"]
+>>> print(example)
+{}
+>>> print(simpledict)
+{'student1': [35, 45, 55, 65], 'student2': {1, 2, 3, 4}, 'student3': [23]}
+>>> del simpledict["student1"]
+>>> print(simpledict)
+{'student2': {1, 2, 3, 4}, 'student3': [23]}
+>>> del simpledict["student2"]
+>>> print(simpledict)
+{'student3': [23]}
+>>> simpledict["student3"]
+[23]
+>>> simpledict["student3"]=[23,24,25,26,27]
+>>> print(simpledict)
+{'student3': [23, 24, 25, 26, 27]}
+>>> del simpledict["student3"][23]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: list assignment index out of range
+>>> del simpledict["student3"][0]
+>>> print(simpledict)
+{'student3': [24, 25, 26, 27]}
+>>> simpledict["student3"]
+[24, 25, 26, 27]
+>>> type(simpledict["student3"])
+<class 'list'>
+>>> simpledict["student3"][0]
+24
+>>> del simpledict["student3"][0]
+>>> simpledict["student3"]
+[25, 26, 27]
+>>> popdict={"key1":"value1","key2":"value2","key3","value3"}
+  File "<stdin>", line 1
+    popdict={"key1":"value1","key2":"value2","key3","value3"}
+                                                   ^
+SyntaxError: invalid syntax
+>>> popdict={"key1":"value1","key2":"value2","key3":"value3"}
+>>> popdict.pop()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: pop expected at least 1 argument, got 0
+>>> popdict.pop("key1")
+'value1'
+>>> print(popdict)
+{'key2': 'value2', 'key3': 'value3'}
+>>> popdict.pop()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: pop expected at least 1 argument, got 0
+>>> popdict.pop("key3")
+'value3'
+>>> print(popdict)
+{'key2': 'value2'}
+>>> popitemdict={"item1":"vallue1","item2":"value2","item3":"value3"}
+>>> print(popitemdict)
+{'item1': 'vallue1', 'item2': 'value2', 'item3': 'value3'}
+>>> popitemdict.popitem()
+('item3', 'value3')
+>>> print(popitemdict)
+{'item1': 'vallue1', 'item2': 'value2'}
+>>> popitemdict.clear()
+>>> print(popitemdict)
+{}
+>>> print(popdict)
+{'key2': 'value2'}
+>>> popdict.values()
+dict_values(['value2'])
+>>> valdict={"key1":"value1","key2":"value2","key3":"value3"}
+>>> popdict.values()
+dict_values(['value2'])
+>>> valdict.values()
+dict_values(['value1', 'value2', 'value3'])
+>>> valuedict.str()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'valuedict' is not defined
+>>> valdict.str()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'dict' object has no attribute 'str'
+>>> str(valdict)
+"{'key1': 'value1', 'key2': 'value2', 'key3': 'value3'}"
+>>> x=str(valdict)
+>>> len(x)
+54
+>>>
+

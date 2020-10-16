@@ -1,0 +1,272 @@
+Data type in Python :
+
+What is a data type ?
+
+ Numbers :
+   int : both positive and negative (signed and unsigned)
+   float: 2.34,-2.34 
+   complex : 
+   
+ Strings:
+    String is called sequence data type 
+	In general string sequence of characters 
+	"Naveen"
+	 0-N - -6 
+	 1-a - -5
+	 2-v - -4
+	 3-e - -3
+	 4-e - -2
+	 5-n - -1
+	 
+	 slicing : Naveen
+	 Immutablity  - The variable assigned will be final and it can't be modified (Updation & deletion ) are not supported 
+	 str1="Naveen" - final 
+	 str1[2]="Y"
+	 print(str1)
+	 str2=str1+"xyz"
+	 
+  Lists :
+  lists will be heterogenous 
+  List allows duplicates
+  list allows sublists also as values 
+  ['naveen','dinesh','ranjith','abhi',1,2,3,4,5]
+  append- it will insert the values to list 
+  insert- it will insert the value at particular index 
+  extend - it only takes 1 argument and that argument can be a list (adding multiple values to the list )
+  remove - we can remove an element in list 
+  
+  Set 
+  dictionaries 
+  tuple 
+  
+  C:\Users\navee>py
+Python 3.8.5 (tags/v3.8.5:580fbb0, Jul 20 2020, 15:43:08) [MSC v.1926 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> "123"
+'123'
+>>> a="123"
+>>> type(a)
+<class 'str'>
+>>> name="Naveen"
+>>> print(name)
+Naveen
+>>> print(input("Enter a name:"))
+Enter a name:Naveen
+Naveen
+>>> name[0]
+'N'
+>>> name[1]
+'a'
+>>> name[2]
+'v'
+>>> name[3]
+'e'
+>>> name[4]
+'e'
+>>> name[5]
+'n'
+>>> name[6]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: string index out of range
+>>> name[-1]
+'n'
+>>> name[-2]
+'e'
+>>> name[-3]
+'e'
+>>> name[-4]
+'v'
+>>> name[-5]
+'a'
+>>> name[-6]
+'N'
+>>> slicstr="We are in python data types"
+>>> len(slicstr)
+27
+>>> slicstr(2)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'str' object is not callable
+>>> slicstr[2]
+' '
+>>> slicstr[0:6]
+'We are'
+>>> slicstr[-1:-10]
+''
+>>> slicstr[-10:-1]
+'data type'
+>>> type(slicstr)
+<class 'str'>
+>>> str1="Naveen"
+>>> str1[-1:-5]
+''
+>>> str1[-5:-1]
+'avee'
+>>> str1[1:5]
+'avee'
+>>> len(str1)
+6
+>>> type(str1)
+<class 'str'>
+>>> print(str1)
+Naveen
+>>> str2=str1+"xyz"
+>>> print(str2)
+Naveenxyz
+>>> str1[2]="Y"
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'str' object does not support item assignment
+>>> str1=str1+"modified"
+>>> print(str1)
+Naveenmodified
+>>> print(str1)
+Naveenmodified
+>>> del str1[0]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'str' object doesn't support item deletion
+>>> del str1
+>>> print(str1)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'str1' is not defined
+>>> samplelist=[]
+>>> type(samplelist)
+<class 'list'>
+>>> samplelist=['naveen','ranjith,'dinesh']
+  File "<stdin>", line 1
+    samplelist=['naveen','ranjith,'dinesh']
+                                   ^
+SyntaxError: invalid syntax
+>>> samplelist=['naveen','ranjith','dinesh']
+>>> samplelist[0]
+'naveen'
+>>> samplelist[1]
+'ranjith'
+>>> samplelist[2]
+'dinesh'
+>>> samplelist[-1]
+'dinesh'
+>>> samplelist[-2]
+'ranjith'
+>>> samplelist[-3]
+'naveen'
+>>> samplelist=['naveen','ranjith','dinesh',1,2,4.5,['list2','list3','list4']]
+>>> samplelist[-1]
+['list2', 'list3', 'list4']
+>>> emptylist=[]
+>>> print(emptylist)
+[]
+>>> emptylist.append("python")
+>>> emptylist.append("python")
+>>> emptylist.append("scala")
+>>> emptylist.append("java")
+>>> emptylist.append("typescript")
+>>> print(emptylist)
+['python', 'python', 'scala', 'java', 'typescript']
+>>> emptylist.append(1)
+>>> emptylist.append(2)
+>>> print(emptylist)
+['python', 'python', 'scala', 'java', 'typescript', 1, 2]
+>>> len(emptylist)
+7
+>>> emptylist[0]
+'python'
+>>> emptylist[1]
+'python'
+>>> emptylist[2]
+'scala'
+>>> emptylist.insert(2,"Naveen")
+>>> emptylist[2]
+'Naveen'
+>>> print(emptylist)
+['python', 'python', 'Naveen', 'scala', 'java', 'typescript', 1, 2]
+>>> len(emptylist)
+8
+>>> emptylist.extend(4,5,6)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: extend() takes exactly one argument (3 given)
+>>> emptylist.extend([4,5,6])
+>>> len(emptylist)
+11
+>>> print(emptylist)
+['python', 'python', 'Naveen', 'scala', 'java', 'typescript', 1, 2, 4, 5, 6]
+>>> emptylist.remove('python')
+>>> print(emptylist)
+['python', 'Naveen', 'scala', 'java', 'typescript', 1, 2, 4, 5, 6]
+>>> emptylist.remove('python')
+>>> print(emptylist)
+['Naveen', 'scala', 'java', 'typescript', 1, 2, 4, 5, 6]
+>>> emptylist.pop()
+6
+>>> emptylist.pop()
+5
+>>> emptylist.pop()
+4
+>>> print(emptylist)
+['Naveen', 'scala', 'java', 'typescript', 1, 2]
+>>> len(emptylist)
+6
+>>> emptylist[0:4]
+['Naveen', 'scala', 'java', 'typescript']
+>>> emptylist[-4:-1]
+['java', 'typescript', 1]
+>>> emptylist.count('Naveen')
+1
+>>> emptylist.append('Naveen')
+>>> emptylist.count('Naveen')
+2
+>>> emptylist.sort()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: '<' not supported between instances of 'int' and 'str'
+>>> print(emptylist)
+['Naveen', 'java', 'scala', 'typescript', 1, 2, 'Naveen']
+>>> emptylist[-4:-1]
+['typescript', 1, 2]
+>>> emptylist[-3:-1]
+[1, 2]
+>>> emptylist[-1]
+'Naveen'
+>>> emptylist[-3:0
+... emptylist[-3:0]
+  File "<stdin>", line 2
+    emptylist[-3:0]
+    ^
+SyntaxError: invalid syntax
+>>> emptylist[-3:0]
+[]
+>>> print(numlist)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'numlist' is not defined
+>>> numlist=[2,8,4,10,1,11]
+>>> numlist.sort()
+>>> print(numlist)
+[1, 2, 4, 8, 10, 11]
+>>> numlist.reverse()
+>>> print(numlist)
+[11, 10, 8, 4, 2, 1]
+>>> numlist.clear(0
+... ;
+  File "<stdin>", line 2
+    ;
+    ^
+SyntaxError: invalid syntax
+>>> numlist.clear()
+>>> len(numlist)
+0
+>>> numlist=[2,8,4,10,1,11]
+>>> numlist.max()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'list' object has no attribute 'max'
+>>>
+  
+  
+  
+  
+  

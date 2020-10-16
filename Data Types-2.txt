@@ -1,0 +1,241 @@
+remaining data types 
+
+Tuple
+set
+
+
+Tuple- Tuple is immutable in nature (we can't modify it once declared)
+C:\Users\navee>py
+Python 3.8.5 (tags/v3.8.5:580fbb0, Jul 20 2020, 15:43:08) [MSC v.1926 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> samplelist=[2,3,4,5,6,7,8,9,12,45,99,10101010]
+>>> max(samplelist)
+10101010
+>>> min(samplelist)
+2
+>>> list=[]
+>>> type(list)
+<class 'list'>
+>>> sample=[]
+>>> type(sample)
+<class 'list'>
+>>> tup=()
+>>> type(tup)
+<class 'tuple'>
+>>> tup[0]="naveen"
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'tuple' object does not support item assignment
+>>> tup=("naveen",1,2.5,[1,2,3,4])
+>>> tup[0]
+'naveen'
+>>> tup[1]
+1
+>>> tup[2]
+2.5
+>>> tup[3]
+[1, 2, 3, 4]
+>>> tup[3][0]
+1
+>>> tup[3][1]
+2
+>>> tup[3][2]
+3
+>>> del tup
+>>> print(tup)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'tup' is not defined
+>>> tup=("naveen",1,2.5,[1,2,3,4])
+>>> print(tup)
+('naveen', 1, 2.5, [1, 2, 3, 4])
+>>> len(tup)
+4
+>>> max(tup)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: '>' not supported between instances of 'int' and 'str'
+>>> tup(1,2,3,4,5,6,7)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'tuple' object is not callable
+>>> tup=(1,2,3,4,5,6,7)
+>>> max(tup)
+7
+>>> min(tup)
+1
+>>> print(samplelist)
+[2, 3, 4, 5, 6, 7, 8, 9, 12, 45, 99, 10101010]
+>>> list2tup=tuple(samplelist)
+>>> print(list2tup)
+(2, 3, 4, 5, 6, 7, 8, 9, 12, 45, 99, 10101010)
+>>> type(list2tuple)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'list2tuple' is not defined
+>>> type(list2tup)
+<class 'tuple'>
+>>> dinesh=tuple(samplelist)
+>>> print(dinesh)
+(2, 3, 4, 5, 6, 7, 8, 9, 12, 45, 99, 10101010)
+>>> tuple1=(1,2,3,4)
+>>> tuple2=(1,2,3,4)
+>>> cmp(tuple1,tuple2)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'cmp' is not defined
+>>> if(cmp(tuple1,tuple2)==0):
+...     print("they are matched)
+  File "<stdin>", line 2
+    print("they are matched)
+                           ^
+SyntaxError: EOL while scanning string literal
+>>> if(cmp(tuple1,tuple2)==0):
+...     print("They are matched")
+...
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'cmp' is not defined
+>>> exit()
+
+C:\Users\navee>python
+Python 2.7.16 |Anaconda, Inc.| (default, Mar 14 2019, 15:42:17) [MSC v.1500 64 bit (AMD64)] on win32
+
+Warning:
+This Python interpreter is in a conda environment, but the environment has
+not been activated. Libraries may fail to load.  To activate this environment
+please see https://conda.io/activation
+
+Type "help", "copyright", "credits" or "license" for more information.
+>>> tuple1=(1,2,3,4)
+>>> tuple2(1,2,3,4)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'tuple2' is not defined
+>>> tuple2=(1,2,3,4)
+>>> cmp()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: cmp expected 2 arguments, got 0
+>>> cmp(tuple1,tuple2)
+0
+>>> exit()
+
+C:\Users\navee>py
+Python 3.8.5 (tags/v3.8.5:580fbb0, Jul 20 2020, 15:43:08) [MSC v.1926 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> tuple1=(1,2,3,4)
+>>> tuple2=(1,2,3,4)
+>>> print(tuple1+tuple2)
+(1, 2, 3, 4, 1, 2, 3, 4)
+>>> tuple3=(tuple1,tuple2)
+>>> print(tuple3)
+((1, 2, 3, 4), (1, 2, 3, 4))
+>>> tuple3[0]
+(1, 2, 3, 4)
+>>> tuple3[0]=(1,2)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'tuple' object does not support item assignment
+>>> del tuple3[0]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'tuple' object doesn't support item deletion
+>>> tuple1=(1,2,3,4,5,6,7,8,9,0)
+>>> tuple1[0:10]
+(1, 2, 3, 4, 5, 6, 7, 8, 9, 0)
+>>> tuple1[0:9]
+(1, 2, 3, 4, 5, 6, 7, 8, 9)
+>>> tuple1[0:10]
+(1, 2, 3, 4, 5, 6, 7, 8, 9, 0)
+>>> tuple1[-10:]
+(1, 2, 3, 4, 5, 6, 7, 8, 9, 0)
+>>> tuple1[-9:]
+(2, 3, 4, 5, 6, 7, 8, 9, 0)
+>>> tuple1[:-4]
+(1, 2, 3, 4, 5, 6)
+>>>
+
+set:Mutable data type (It can be modified and updated)
+Set is one data type which doesn't allow duplicates to be stored in it 
+Set doesn't maintain the insertion order so it is called unordered data type 
+
+You can't add a list as vallue to a set where as you can add a tuple as value to a set 
+
+add()- add function is to add values to a set 
+update() - this function is used for adding multiple values to a set 
+
+>>> print("class for sets from here ")
+class for sets from here
+>>> set1=set()
+>>> type(set1)
+<class 'set'>
+>>> set1=set("naveen")
+>>> print(set1)
+{'v', 'n', 'e', 'a'}
+>>> set1=set("naveen","python","dinesh")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: set expected at most 1 argument, got 3
+>>> set1=set(["naveen","python","dinesh"])
+>>> print(set1)
+{'dinesh', 'naveen', 'python'}
+>>> set1=set(["naveen","python","dinesh","dinesh","python","scala"])
+>>> print(set1)
+{'scala', 'dinesh', 'naveen', 'python'}
+>>> len(set1)
+4
+>>> set() help
+  File "<stdin>", line 1
+    set() help
+          ^
+SyntaxError: invalid syntax
+>>> numset=set([1,2,3,4,5,5,4,3,2,1])
+>>> print(numset)
+{1, 2, 3, 4, 5}
+>>> set({})
+set()
+>>> print(numset)
+{1, 2, 3, 4, 5}
+>>> numset.add(6)
+>>> print(numset)
+{1, 2, 3, 4, 5, 6}
+>>> numset.add([1,2,3,4,5])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unhashable type: 'list'
+>>> numset.add((1,2))
+>>> print(numset)
+{1, 2, 3, 4, 5, 6, (1, 2)}
+>>> numset.update([0,23])
+>>> print(numset)
+{0, 1, 2, 3, 4, 5, 6, (1, 2), 23}
+>>> numset[0]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'set' object is not subscriptable
+>>> numset.remove(0)
+>>> print(numset)
+{1, 2, 3, 4, 5, 6, (1, 2), 23}
+>>> numset.remove((1,2))
+>>> print(numset)
+{1, 2, 3, 4, 5, 6, 23}
+>>> numset.discard(23)
+>>> print(numset)
+{1, 2, 3, 4, 5, 6}
+>>> numset.pop()
+1
+>>> numset.pop()
+2
+>>> numset.pop()
+3
+>>> print(numset)
+{4, 5, 6}
+>>> numset.clear()
+>>> print(numset)
+set()
+>>>
+
+
+
+
